@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "telegram-param-store"
+version = "0.1.0"
+description = ""
+authors = ["Zhu Weiji <zhuweiji1997@gmail.com>"]
+readme = "README.md"
+packages = [{include = "telegram_param_store"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jurigged = "^0.5.5"
+tomli = "^2.0.1"
+tomli-w = "^1.0.0"
+fastapi = {extras = ["uvicorn"], version = "^0.95.1"}
+python-telegram-bot = {extras = ["webhooks"], version = "^20.3"}
+uvicorn = "^0.22.0"
+grpcio-tools = "^1.54.2"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+start               = "scripts:start"
+compile_proto       = "scripts:compile_proto"
+test                = "scripts:test"
+tests               = "scripts:test"
+healthcheck         = "scripts:healthcheck"
+add_precommit_hooks = "scripts:add_pre_commit_hooks"
